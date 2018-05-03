@@ -1,0 +1,126 @@
+.login_submit{
+	border: 1px solid black;display: inline-block;padding: 2px 5px;cursor: pointer;
+}
+.room_list{
+	display: none;
+}
+.student_login{
+	margin-top: 10px;
+	border: 1px solid black;
+    display: inline-block;
+    padding: 2px 5px;
+    cursor: pointer;
+}
+.enter_room{
+	margin-left: 20px;
+	cursor: pointer;
+	border: 1px solid black;
+	border-radius: 2px;
+	padding: 0px 4px;
+}
+.room_block.current_room {
+	border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+section.room_section {
+	margin-top: 50px;
+	border: 1px solid black;
+	background: aliceblue;
+	padding: 5px;
+	border-radius: 5px;
+	overflow: hidden;
+	padding-bottom: 0px;
+}
+span.room_name {
+	float: left;
+}
+span.room_count_box {
+	float: right;
+}
+.room_content_box {
+	height: calc(100% - 30px);
+	overflow: auto;
+}
+
+.room_header {
+	overflow:  hidden;
+	padding-bottom:  5px;
+	border-bottom: 1px  solid black;
+}
+.chat_row {
+	border-bottom: 1px solid;
+	padding:  3px 0px;
+	overflow:  hidden;
+}
+
+.chat_user {
+	
+	width: 10%;
+}
+
+.chat_msg {
+
+	width:  90%;
+}
+.input_area {
+	float:  left;
+	width: calc(100% - 80px);
+	background:  white;
+	border:  1px solid;
+	padding: 5px 2px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.input_enter {
+	width: 80px;
+	float: left;
+	border: 1px solid;
+	border-left:none;
+	padding: 5px 2px;
+	text-align: center;
+	cursor:  pointer;
+}
+
+.custom_input_text {
+	width: 100%;
+	outline: none;
+	display: inline-block;
+	overflow: auto;
+	max-height:  18px;
+}
+.room_chat_box:after {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+.whiteboard_section {
+    float: left;
+    width: 80%;
+    height: 300px;
+}
+
+.chatroom_section {
+    float:  left;
+    width:  20%;
+    height: 400px;
+    position:  relative;
+    border-left: 1px solid;
+    padding-left:  6px;
+    padding-bottom:  5px;
+}
+
+.room_chat_box {max-height:  30px;/* overflow: auto; */}
+
+.room_header:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+.upload_ppt_box{
+	display: none;
+}
