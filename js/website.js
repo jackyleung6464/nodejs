@@ -1,3 +1,4 @@
+var login_token = '';
 $(function(){
 	console.log('jquery ready');
 	var status 		= $('.status');
@@ -6,7 +7,7 @@ $(function(){
 	var room_list 	= $('.room_list');
 	var c_room_port	= 0;
 	var room_socket;
-    var login_token = '';
+    
 
 	var socket = io();
     socket.on("connect", function () {

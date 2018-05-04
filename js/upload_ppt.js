@@ -7,9 +7,10 @@ $('#upload-input').on('change', function(){
       var file = files[i];
       formData.append('uploads[]', file, file.name);
     }
+
     console.log('ajax upload start');
     $.ajax({
-      url: '/upload_ppt',
+      url: '/upload_ppt?token='+login_token,
       type: 'POST',
       data: formData,
       processData: false,
