@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
-var childSchema = new Schema({ path: 	{ type: String } });
+const pptSlide_schema = require("./child/pptSlide_schema.js");
 
 module.exports = new Schema({
   	filename: 	{ type: String },	
@@ -9,5 +8,5 @@ module.exports = new Schema({
     owner_id:   { type: String },
     create_at: 	{ type: Date, default: Date.now },
     update_at: 	{ type: Date, default: Date.now },
-    pptSlide:   [childSchema]
+    pptSlide:   [pptSlide_schema]
 });

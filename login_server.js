@@ -10,12 +10,12 @@ const formidable = require('formidable');
 const request = require('request');
 const FormData = require('form-data');
 
-
 const Port_room = require('./class_room.js');
 const HashMap = require('hashmap');
 const db_connection = require('./db/db_connection.js');
 const user_schema = require('./db/user_schema.js');
 const ppt_schema = require('./db/ppt_schema.js');
+// const pptSlide_schema = require('./db/child/pptSlide_schema.js');
 
 const userModel = db_connection.model('User', user_schema);
 const pptModel  = db_connection.model('ppt', ppt_schema);
@@ -54,8 +54,6 @@ app.post('/upload_ppt', function(req, res){
         if (!fs.existsSync(ppt2jpg_dir)){
             fs.mkdirSync(ppt2jpg_dir);
         }
-
-        
 
         let cloudconvert = new (require('cloudconvert'))('p3w4P9HhhgzN8wmWz5S3BtF3j2Ygmav2GGlecpnEY3CigDxTnoSqvqEXG6bUEyWp');
         fs.createReadStream(dest_path)
@@ -98,7 +96,6 @@ io.on('connection', (socket) => {
         console.log('get_room_list');
         io.emit("getback_room_list", room_list);
     });
-
 
     socket.on('login',( username , password )=>{
         userModel.findOne({
@@ -146,8 +143,8 @@ function add_ppt2db(filename,token,pptSlide_path){
                                     filename:   filename,
                                     owner_id:   token
                                 });
-                    for(let i=0;i<pptSlide_path.length.i++){
-                         ppt.pptSlide[i].path = pptSlide_path[i];
+                    for(let i=0;i<pptSlide_path.length;i++){
+                         ppt.pptSlide.push({ path: pptSlide_path[i] });
                     }
                     ppt.save(function (err, user) {
                     if (err) { return console.error(err);}
@@ -156,5 +153,3 @@ function add_ppt2db(filename,token,pptSlide_path){
                 }else{console.log('upload ppt2db token error');}
             });
 }
-
-
